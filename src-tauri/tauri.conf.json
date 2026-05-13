@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/nicegui-org/nicegui/main/nicegui/static/tauri/v2.json",
   "productName": "cc-setting",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "identifier": "com.cc-setting.app",
   "build": {
     "frontendDist": "../dist",
@@ -38,7 +38,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/user/cc-setting/releases/latest/download/latest.json"
+        "https://github.com/Luzer-Chen/CC-Setting/releases/latest/download/latest.json"
       ],
       "dialog": true,
       "pubkey": ""

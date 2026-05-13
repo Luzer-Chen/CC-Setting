@@ -35,14 +35,14 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Profile selector
     'profile.title': 'Profile 预设',
-    'profile.safe': '安全模式',
-    'profile.safe.desc': '严格限制，适合生产环境',
-    'profile.dev-net': '开发网络',
-    'profile.dev-net.desc': '允许网络访问，适合开发',
-    'profile.strict': '严格模式',
-    'profile.strict.desc': '最高安全级别',
+    'profile.strict': '严格审查',
+    'profile.strict.desc': '离线审查，最少自动权限，更多操作需手动确认',
+    'profile.safe-dev': '安全网络开发',
+    'profile.safe-dev.desc': '开启开发网络白名单，适合日常项目迭代',
+    'profile.automation': '自动化',
+    'profile.automation.desc': '最大化开发自动化，保留主机与敏感操作底线',
     'profile.custom': '自定义',
-    'profile.custom.desc': '手动配置所有选项',
+    'profile.custom.desc': '手动组合所有配置项',
 
     // Permission modes
     'permission.title': 'defaultMode',
@@ -307,14 +307,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.restart': '重启应用',
 
     // Profile names and descriptions (keyed by profile id)
-    'profile.safe.name': '安全离线模式',
-    'profile.safe.description': 'sandbox 开启，网络禁用，只允许项目内读写',
-    'profile.dev-net.name': '开放网络开发模式',
-    'profile.dev-net.description': 'sandbox 开启，网络开放，允许常用开发命令',
     'profile.strict.name': '严格审查模式',
-    'profile.strict.description': '只读为主，不允许安装依赖，不开放网络',
+    'profile.strict.description': '离线审查，最少自动权限，更多操作需手动确认',
+    'profile.safe-dev.name': '安全网络开发模式',
+    'profile.safe-dev.description': '开启开发网络白名单，适合日常项目迭代',
+    'profile.automation.name': '自动化模式',
+    'profile.automation.description': '最大化开发自动化，保留主机与敏感操作底线',
     'profile.custom.name': '自定义模式',
-    'profile.custom.description': '用户自由组合 permissions、sandbox、network、WebFetch、AAD 规则',
+    'profile.custom.description': '手动配置所有选项',
 
     // Action bar status
     'action.copiedToClipboard': '已复制到剪贴板',
@@ -456,14 +456,14 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Profile selector
     'profile.title': 'Profile Presets',
-    'profile.safe': 'Safe Mode',
-    'profile.safe.desc': 'Strict limits, suitable for production',
-    'profile.dev-net': 'Dev Network',
-    'profile.dev-net.desc': 'Allow network access for development',
-    'profile.strict': 'Strict Mode',
-    'profile.strict.desc': 'Highest security level',
+    'profile.strict': 'Strict Review',
+    'profile.strict.desc': 'Offline review, minimal auto-permissions, more operations require confirmation',
+    'profile.safe-dev': 'Safe Network Dev',
+    'profile.safe-dev.desc': 'Open dev network whitelist, suitable for daily project iteration',
+    'profile.automation': 'Automation',
+    'profile.automation.desc': 'Maximize dev automation, keep host and sensitive operation safeguards',
     'profile.custom': 'Custom',
-    'profile.custom.desc': 'Manually configure all options',
+    'profile.custom.desc': 'Manually combine all configuration options',
 
     // Permission modes
     'permission.title': 'defaultMode',
@@ -734,14 +734,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.restart': 'Restart App',
 
     // Profile names and descriptions (keyed by profile id)
-    'profile.safe.name': 'Safe Offline Mode',
-    'profile.safe.description': 'Sandbox enabled, network disabled, only project read/write allowed',
-    'profile.dev-net.name': 'Open Network Dev Mode',
-    'profile.dev-net.description': 'Sandbox enabled, network open, allow common dev commands',
     'profile.strict.name': 'Strict Review Mode',
-    'profile.strict.description': 'Read-only, no dependency install, no network access',
+    'profile.strict.description': 'Offline review, minimal auto-permissions, more operations require confirmation',
+    'profile.safe-dev.name': 'Safe Network Dev Mode',
+    'profile.safe-dev.description': 'Open dev network whitelist, suitable for daily project iteration',
+    'profile.automation.name': 'Automation Mode',
+    'profile.automation.description': 'Maximize dev automation, keep host and sensitive operation safeguards',
     'profile.custom.name': 'Custom Mode',
-    'profile.custom.description': 'Freely combine permissions, sandbox, network, WebFetch, AAD rules',
+    'profile.custom.description': 'Manually combine all configuration options',
 
     // Action bar status
     'action.copiedToClipboard': 'Copied to clipboard',

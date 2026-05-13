@@ -107,6 +107,10 @@ export const devWebFetchDomains: string[] = [
   'npmjs.com',
   'docs.npmjs.com',
   'nodejs.org',
+  'crates.io',
+  'doc.rust-lang.org',
+  'pypi.org',
+  'developer.mozilla.org',
 ];
 
 export function createDefaultState(): AppState {
