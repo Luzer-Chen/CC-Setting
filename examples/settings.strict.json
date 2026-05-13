@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read(./**)",
+      "Bash(pwd)",
+      "Bash(ls *)",
+      "Bash(find . *)",
+      "Bash(grep *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.docker/**)",
+      "Read(~/.config/gh/**)",
+      "Read(~/.kube/**)",
+      "Edit(./.env)",
+      "Edit(./.env.*)",
+      "Write(./.env)",
+      "Write(./.env.*)",
+      "Bash(sudo *)",
+      "Bash(su *)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf ./*)",
+      "Bash(git push *)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -fd *)",
+      "Bash(ssh *)",
+      "Bash(scp *)",
+      "Bash(rsync *)",
+      "Bash(docker run --privileged *)",
+      "Bash(docker system prune *)",
+      "Bash(docker volume rm *)",
+      "Bash(docker compose down -v *)",
+      "Bash(npm install)",
+      "Bash(pnpm install)",
+      "Bash(yarn install)",
+      "Bash(cargo build *)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "allowRead": ["."],
+      "allowWrite": [".", "/tmp/claude-501", "/private/tmp/claude-501"],
+      "denyRead": ["~/.ssh", "~/.aws", "~/.docker", "~/.config/gh", "~/.kube"],
+      "denyWrite": ["~/.ssh", "~/.aws", "~/.docker", "~/.config/gh", "~/.kube"]
+    },
+    "network": {
+      "allowedDomains": [],
+      "deniedDomains": ["*"],
+      "allowLocalBinding": true,
+      "allowAllUnixSockets": false
+    }
+  }
+}
