@@ -17,6 +17,7 @@ import JsonStatusSummary from './components/JsonStatusSummary';
 import JsonDrawer from './components/JsonDrawer';
 import AADModule from './components/AADModule';
 import AADDetailPage from './components/AADDetailPage';
+import BashEditorDrawer from './components/BashEditorDrawer';
 import SandboxDetailPage from './components/SandboxDetailPage';
 import DangerReport from './components/DangerReport';
 import ActionBar from './components/ActionBar';
@@ -32,6 +33,8 @@ function App() {
   const [websearchCustomOpen, setWebsearchCustomOpen] = useState(false);
   const [aadDrawerOpen, setAadDrawerOpen] = useState(false);
   const [aadDrawerType, setAadDrawerType] = useState<AADType>('allow');
+  const [bashDrawerOpen, setBashDrawerOpen] = useState(false);
+  const [bashDrawerType, setBashDrawerType] = useState<AADType>('allow');
   const [sandboxDrawerOpen, setSandboxDrawerOpen] = useState(false);
   const { t } = useI18n();
 
@@ -221,6 +224,7 @@ function App() {
           aadType={aadDrawerType}
           onChange={updateState}
           onBack={() => setAadDrawerOpen(false)}
+          onOpenBashDrawer={(type) => { setBashDrawerType(type); setBashDrawerOpen(true); }}
         />
       )}
 
@@ -232,6 +236,15 @@ function App() {
           onBack={() => setSandboxDrawerOpen(false)}
         />
       )}
+
+      {/* Bash Editor Drawer */}
+      <BashEditorDrawer
+        state={state}
+        aadType={bashDrawerType}
+        open={bashDrawerOpen}
+        onClose={() => setBashDrawerOpen(false)}
+        onChange={updateState}
+      />
 
       {/* Update Checker */}
       <UpdateChecker />

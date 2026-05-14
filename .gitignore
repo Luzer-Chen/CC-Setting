@@ -11,6 +11,7 @@ coverage/
 
 # Tauri
 src-tauri/target/
+src-tauri/.rustup-home/
 
 # OS
 .DS_Store
@@ -29,6 +30,9 @@ Thumbs.db
 
 # Local configs
 *.local
+
+# TypeScript build info
+tsconfig.tsbuildinfo
 
 # Release artifacts
 release-dist/

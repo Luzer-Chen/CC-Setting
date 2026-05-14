@@ -8,6 +8,7 @@ interface Props {
   aadType: AADType;
   onChange: (partial: Partial<AppState>) => void;
   onBack: () => void;
+  onOpenBashDrawer?: (type: AADType) => void;
 }
 
 function getToolRules(rules: string[], toolId: string): string[] {
@@ -34,7 +35,7 @@ function getToolRules(rules: string[], toolId: string): string[] {
   });
 }
 
-export default function AADDetailPage({ state, aadType, onChange, onBack }: Props) {
+export default function AADDetailPage({ state, aadType, onChange, onBack, onOpenBashDrawer }: Props) {
   const [expandedTool, setExpandedTool] = useState<string | null>('Bash');
   const [customInput, setCustomInput] = useState('');
   const { t } = useI18n();
@@ -108,6 +109,35 @@ export default function AADDetailPage({ state, aadType, onChange, onBack }: Prop
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {TOOL_CATEGORIES.map((cat) => {
             const toolRules = getToolRules(rules, cat.id);
+
+            // Bash: fully clickable card, no expand/collapse
+            if (cat.id === 'Bash') {
+              return (
+                <div
+                  key={cat.id}
+                  onClick={() => onOpenBashDrawer?.(aadType)}
+                  className="bg-[var(--bg-card)] rounded-lg border border-[var(--border)] px-3 py-2.5 cursor-pointer hover:bg-[var(--accent-bg)] hover:border-[var(--accent)] transition-colors group"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onOpenBashDrawer?.(aadType); }}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-sm font-semibold text-[var(--text-primary)]">{cat.label}</span>
+                      <span className="text-[10px] text-[var(--text-muted)]">{t(`tool.${cat.id}.desc`)}</span>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0 ml-2">
+                      <span className="text-xs text-[var(--text-secondary)]">{toolRules.length}</span>
+                      <span className="text-[10px] text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors">
+                        {t('bash.enterConfig')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            // Other tools: standard expandable accordion
             const isExpanded = expandedTool === cat.id;
 
             return (

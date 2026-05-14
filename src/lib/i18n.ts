@@ -263,6 +263,21 @@ const translations: Record<Locale, Record<string, string>> = {
     // AAD Ask toggle
     'aad.askDisabled': '已禁用',
 
+    // Bash editor
+    'bash.title': 'Bash 命令库',
+    'bash.search': '搜索命令...',
+    'bash.selectAll': '全选',
+    'bash.deselectAll': '取消全选',
+    'bash.customTitle': '自定义命令',
+    'bash.customHint': '输入命令自动包裹 Bash()',
+    'bash.customPlaceholder': '输入命令，如 git push、make install',
+    'bash.edit': '编辑',
+    'bash.emptyHint': '点击编辑添加 Bash 命令',
+    'bash.duplicateError': '该命令已存在于 allow/ask/deny 中',
+    'bash.navTitle': '分类导航',
+    'bash.enterConfig': '进入配置',
+    'bash.wideMatchHint': '宽匹配规则 — 覆盖该工具所有命令',
+
     // JSON status
     'json.title': 'JSON 状态摘要',
     'json.view': '查看 JSON',
@@ -689,6 +704,21 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // AAD Ask toggle
     'aad.askDisabled': 'Disabled',
+
+    // Bash editor
+    'bash.title': 'Bash Command Library',
+    'bash.search': 'Search commands...',
+    'bash.selectAll': 'Select all',
+    'bash.deselectAll': 'Deselect all',
+    'bash.customTitle': 'Custom Command',
+    'bash.customHint': 'Input auto-wraps with Bash()',
+    'bash.customPlaceholder': 'Enter command, e.g. git push, make install',
+    'bash.edit': 'Edit',
+    'bash.emptyHint': 'Click Edit to add Bash commands',
+    'bash.duplicateError': 'Command already exists in allow/ask/deny',
+    'bash.navTitle': 'Categories',
+    'bash.enterConfig': 'Configure',
+    'bash.wideMatchHint': 'Wide-match rule — covers all commands for this tool',
 
     // JSON status
     'json.title': 'JSON Status Summary',
